@@ -66,7 +66,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path === '/cart') {
-    if (localStorage.getItem.token) {
+    if (localStorage.getItem('token')) {
       next()
     } else {
       Vue.prototype.$toast('请先登录')
