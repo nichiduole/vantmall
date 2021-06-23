@@ -14,22 +14,33 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      num: 0
+      num: 0,
+      isShow: true
     },
     children: [
       {
         path: 'popups',
-        name: 'popups',
-        component: () => import('@/views/home/popups/Popup.vue')
+        name: 'Popups',
+        component: () => import('@/views/home/popups/Popups.vue')
       }
     ]
+  },
+  {
+    path: '/product_list',
+    name: 'ProductList',
+    component: () => import('@/views/home/popups/components/Search.vue')
+  },
+  {
+    path: '/product',
+    component: () => import('@/views/home/product/Product.vue')
   },
   {
     path: '/topic',
     name: 'Topic',
     component: () => import('@/views/topic/Topic.vue'),
     meta: {
-      num: 1
+      num: 1,
+      isShow: true
     }
   },
   {
@@ -37,7 +48,8 @@ const routes = [
     name: 'Category',
     component: () => import('@/views/category/Category.vue'),
     meta: {
-      num: 2
+      num: 2,
+      isShow: true
     }
   },
   {
@@ -45,7 +57,8 @@ const routes = [
     name: 'Cart',
     component: () => import('@/views/cart/Cart.vue'),
     meta: {
-      num: 3
+      num: 3,
+      isShow: true
     }
   },
   {
@@ -53,7 +66,8 @@ const routes = [
     name: 'Profile',
     component: () => import('@/views/profile/Profile.vue'),
     meta: {
-      num: 4
+      num: 4,
+      isShow: true
     }
   }
 ]

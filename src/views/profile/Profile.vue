@@ -117,9 +117,18 @@ export default {
       this.$toast('该功能尚未开放')
     },
     quit () {
-      localStorage.removeItem('token')
-      localStorage.removeItem('username')
-      this.$router.go(0)
+      this.$dialog.confirm({
+        title: '提示',
+        message: '是否退出账号？'
+      })
+        .then(() => {
+          localStorage.removeItem('token')
+          localStorage.removeItem('username')
+          this.$router.go(0)
+          this.$toast('退出成功')
+        })
+        .catch(() => {
+        })
     },
     onSubmit (values) {
       if (this.username === 'hkn' && this.password === '123456') {

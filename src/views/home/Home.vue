@@ -10,25 +10,37 @@
                   @click="$router.push('/home/popups')"
                   placeholder="请输入搜索关键词" />
     </div>
-    <Swiper></Swiper>
+    <Swiper :banners="homeBanners"></Swiper>
+    <hot-sale></hot-sale>
     <transition name="van-fade">
       <router-view></router-view>
     </transition>
-
   </div>
 </template>
 
 <script>
 import Swiper from '@/components/Swiper'
+import HotSale from '@/views/home/HotSale'
 export default {
   name: 'Home',
+
   components: {
-    Swiper
+    Swiper,
+    HotSale
   },
   data () {
     return {
-      searchValue: ''
+      searchValue: '',
+      homeBanners: [],
+      hotSale: []
     }
+  },
+  mounted () {
+    this.$API.homeData().then(res => {
+      this.homeBanners = res.data.banners
+      this.hotSale = res.data.hotSale
+      console.log(this.hotSale)
+    })
   },
   methods: {
   }

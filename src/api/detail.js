@@ -8,3 +8,4 @@ export const searchData = (params) => request('/search', {
 export const filterData = (params) => request('/filter', {
   params: params
 })
+export const productDetail = () => request('/product')

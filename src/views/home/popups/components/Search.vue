@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search">
     <van-dropdown-menu>
       <van-dropdown-item title="综合"
                          disabled />
@@ -17,8 +17,9 @@
     <div class="product"
          v-if="show===1">
       <ul>
-        <li v-for="(item,index) in list"
-            :key="index">
+        <li v-for="item in list"
+            :key="item.id"
+            @click="goProduct(item.id)">
           <img :src="item.img">
           <div class="content">
             <div class="name">{{item.name}}</div>
@@ -46,6 +47,10 @@ export default {
       value2: 2
     }
   },
+  inject: ['app'],
+  mounted () {
+    console.log(this.app.name)
+  },
   props: ['list', 'category'],
   methods: {
     priceSort (val) {
@@ -53,6 +58,14 @@ export default {
     },
     categorySort (val) {
       this.$emit('categorySort', val)
+    },
+    goProduct (id) {
+      this.$router.push({
+        path: '/product',
+        query: {
+          id: id
+        }
+      })
     }
   }
 }
@@ -62,17 +75,18 @@ export default {
 ul {
   display: flex;
   flex-wrap: wrap;
-  padding: 5px;
+  padding: 7px 7px 0 7px;
   justify-content: space-between;
+  background-color: #efefef;
 }
 li {
   width: 49%;
-  padding-bottom: 5px;
+  margin-bottom: 7px;
+  background-color: #fff;
   img {
     width: 100%;
   }
   .content {
-    background-color: #fff;
     font-size: 14px;
     text-align: center;
     padding-bottom: 15px;

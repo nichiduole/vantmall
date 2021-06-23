@@ -1,8 +1,6 @@
 <template>
   <div>
     <van-tabbar v-model="active">
-      <!-- <van-icon class-prefix="iconfont"
-                name="icon-gouwuchefill" /> -->
       <van-tabbar-item icon="home-o"
                        to='/home'>首页</van-tabbar-item>
       <van-tabbar-item icon="label-o"
@@ -13,12 +11,6 @@
                        to='/cart'>购物车</van-tabbar-item>
       <van-tabbar-item icon="contact"
                        to='/profile'>我的</van-tabbar-item>
-      <!-- <van-tabbar-item to="/mytest">
-        <span>自定义</span>
-        <template #icon="props">
-          <i :class="props.active? `iconfont icon-shouyefill`:`iconfont icon-shouye`"></i>
-        </template>
-      </van-tabbar-item> -->
     </van-tabbar>
   </div>
 </template>

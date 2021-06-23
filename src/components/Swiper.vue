@@ -4,7 +4,8 @@
                :autoplay="3000"
                indicator-color="white">
       <van-swipe-item v-for="(banner,index) in banners"
-                      :key="index">
+                      :key="index"
+                      @click="test($event,2)">
         <img :src="banner"
              style="width:100%">
       </van-swipe-item>
@@ -14,16 +15,18 @@
 
 <script>
 export default {
-  name: 'Swipe',
+  name: 'Swiper',
+  props: ['banners'],
   data () {
     return {
-      banners: []
     }
   },
-  mounted () {
-    this.$API.homeData().then(res => {
-      this.banners = res.data.banners
-    })
+
+  methods: {
+    test (a, b) {
+      console.log(a)
+      console.log(b)
+    }
   }
 }
 
