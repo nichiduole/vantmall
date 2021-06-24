@@ -1,9 +1,24 @@
 {
-  "hotSale": [
-    "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cb65daec7ef7b52cc785f88f78efba37.png?w=216&h=228&bg=FDF1E6",
-    "https://i8.mifile.cn/v1/a1/e8bc849a-0a3b-21a0-6810-7da3a3903dee.webp?w=216&h=228&bg=FDEFDE",
-    "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ea68dee2bfa0e55a82236b0d968e975.png?w=216&h=228&bg=FCEAEA",
-    "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0434594382110f3bd15c90f040d5d542.jpg?f=webp&w=216&h=228&bg=FFFFFF",
-    "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/64f3988b6216e4c1ab62a7f50df3e816.png?f=webp&w=216&h=228&bg=FFFFFF"
+  "hotLaptop": [
+    {
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6eef3de395e69ab1f7fb8de10bbae649.jpg",
+      "info": "RedmiBook Pro 14",
+      "price": "4699起"
+    },
+    {
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dff54ca1a31d2441e38c973fbc9bf9b.jpg",
+      "info": "RedmiBook Pro 14",
+      "price": "4999起"
+    },
+    {
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f07994da29487e4d3732888a152afbbd.jpg",
+      "info": "小米笔记本Pro 15",
+      "price": "6499起"
+    },
+    {
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/09adda25ee11a2b6dd29164fa3a8fd6c.jpg",
+      "info": "小米笔记本Pro 14",
+      "price": "5299起"
+    }
   ]
 }

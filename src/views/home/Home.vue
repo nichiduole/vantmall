@@ -11,7 +11,15 @@
                   placeholder="请输入搜索关键词" />
     </div>
     <Swiper :banners="homeBanners"></Swiper>
-    <hot-sale></hot-sale>
+    <NavBar :navBar="navBar"></NavBar>
+    <Recommend></Recommend>
+    <HotItem :itemData="phoneData"></HotItem>
+    <HotItem :itemData="TVData"
+             :isShow=false></HotItem>
+    <HotItem :itemData="laptopData"
+             :isShow=false></HotItem>
+    <HotItem :itemData="AIData"
+             :isShow=false></HotItem>
     <transition name="van-fade">
       <router-view></router-view>
     </transition>
@@ -20,49 +28,61 @@
 
 <script>
 import Swiper from '@/components/Swiper'
-import HotSale from '@/views/home/HotSale'
+import NavBar from '@/views/home/components/NavBar'
+import Recommend from '@/views/home/components/Recommend'
+import HotItem from '@/components/HotItem'
 export default {
   name: 'Home',
-
   components: {
     Swiper,
-    HotSale
+    NavBar,
+    Recommend,
+    HotItem
   },
   data () {
     return {
       searchValue: '',
       homeBanners: [],
-      hotSale: []
+      navBar: [],
+      phoneData: {
+        img: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5b2fff7f7b8de6d371601caf3a827eed.jpg',
+        list: [],
+        info: '更多小米手机产品'
+      },
+      TVData: {
+        img: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/46763407ec689716610a7342b920bb1a.jpg',
+        list: [],
+        info: '更多小米电视产品'
+      },
+      laptopData: {
+        img: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/393a90da633889384d35acb7c44eeb17.jpg',
+        list: [],
+        info: '更多小米笔记本产品'
+      },
+      AIData: {
+        img: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5070349d6511ec431810d7528de020aa.jpg',
+        list: [],
+        info: '更多米家家电产品'
+      }
     }
   },
   mounted () {
     this.$API.homeData().then(res => {
       this.homeBanners = res.data.banners
-      this.hotSale = res.data.hotSale
-      console.log(this.hotSale)
+      this.navBar = res.data.navBar
+      this.phoneData.list = res.data.hotPhone
+      this.laptopData.list = res.data.hotLaptop
     })
-  },
-  methods: {
   }
 }
 </script>
 
 <style lang="less" scoped>
 @search-input-width: 90%;
-.search-enter,
-.search-leave-to {
-  opacity: 0;
-}
-.search-enter-active,
-.search-leave-active {
-  transition: all 0.2s;
-}
-.search-enter-to,
-.search-leave {
-  opacity: 1;
-}
 .home {
   position: relative;
+  margin-bottom: 60px;
+  background-color: #f5f5f5;
 }
 .search {
   width: 100%;

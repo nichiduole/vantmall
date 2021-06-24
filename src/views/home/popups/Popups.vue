@@ -106,7 +106,7 @@ export default {
 <style lang='less' scoped>
 .popups {
   position: absolute;
-  background-color: #efefef;
+  background-color: #fff;
   top: 0;
   left: 0;
   right: 0;
