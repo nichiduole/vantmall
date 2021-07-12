@@ -25,18 +25,14 @@ export default {
     }
   },
   props: ['hotSearch'],
-
   components: {},
-
   computed: {},
-
   methods: {
     hotEvent (item) {
       this.$emit('tagEvent', item)
     }
   }
 }
-
 </script>
 <style lang='less' scoped>
 .hot-search {

@@ -99,9 +99,7 @@ export default {
       this.onSearch()
     }
   }
-
 }
-
 </script>
 <style lang='less' scoped>
 .popups {

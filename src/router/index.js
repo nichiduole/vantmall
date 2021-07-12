@@ -16,14 +16,12 @@ const routes = [
     meta: {
       num: 0,
       isShow: true
-    },
-    children: [
-      {
-        path: 'popups',
-        name: 'Popups',
-        component: () => import('@/views/home/popups/Popups.vue')
-      }
-    ]
+    }
+  },
+  {
+    path: '/popups',
+    name: 'Popups',
+    component: () => import('@/views/home/popups/Popups.vue')
   },
   {
     path: '/product_list',

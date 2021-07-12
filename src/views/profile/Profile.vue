@@ -117,18 +117,23 @@ export default {
       this.$toast('该功能尚未开放')
     },
     quit () {
-      this.$dialog.confirm({
-        title: '提示',
-        message: '是否退出账号？'
-      })
-        .then(() => {
-          localStorage.removeItem('token')
-          localStorage.removeItem('username')
-          this.$router.go(0)
-          this.$toast('退出成功')
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.$dialog.confirm({
+          title: '提示',
+          message: '是否退出账号？'
         })
-        .catch(() => {
-        })
+          .then(() => {
+            localStorage.removeItem('token')
+            localStorage.removeItem('username')
+            this.$router.go(0)
+            this.$toast('退出成功')
+          })
+          .catch(() => {
+          })
+      } else {
+        this.$toast('你还没有登录，无需退出')
+      }
     },
     onSubmit (values) {
       if (this.username === 'hkn' && this.password === '123456') {
@@ -198,5 +203,7 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 165px;
 }
 </style>

@@ -30,11 +30,8 @@ export default {
     }
   },
   props: ['historySearch'],
-
   components: {},
-
   computed: {},
-
   methods: {
     historyEvent (item) {
       this.$emit('tagEvent', item)
@@ -47,7 +44,6 @@ export default {
     }
   }
 }
-
 </script>
 <style lang='less' scoped>
 .history-search {

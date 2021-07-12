@@ -9,7 +9,7 @@
            :key="index">
         <img :src="item.img">
         <div class="info">{{item.info}}</div>
-        <div class="price">{{item.price | priceFormat}}
+        <div class="price">{{item.price | price}}
         </div>
         <van-button type="danger">立即购买</van-button>
       </div>
@@ -28,11 +28,6 @@ export default {
     isShow: {
       type: Boolean,
       default: true
-    }
-  },
-  filters: {
-    priceFormat (val) {
-      return '￥' + val
     }
   },
   components: {

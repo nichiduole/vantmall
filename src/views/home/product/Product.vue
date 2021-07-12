@@ -14,7 +14,7 @@
              :hide-stock="sku.hide_stock"
              @buy-clicked="onBuyClicked"
              @add-cart="onAddCartClicked" />
-    <ProductGoodsAction @changeShow="show=true"
+    <ProductGoodsAction @changeShow="changeShow"
                         :badge="badge"></ProductGoodsAction>
   </div>
 </template>
@@ -258,15 +258,38 @@ export default {
     })
   },
   methods: {
+    changeShow () {
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.show = true
+      } else {
+        this.$toast('请先登录')
+        setTimeout(() => {
+          this.$router.replace('/profile')
+        }, 1000)
+      }
+    },
     onBuyClicked () {
-      this.$toast('此功能尚未开放')
+      const token = localStorage.getItem('token')
+      if (token) {
+        this.$toast('此功能尚未开放')
+      }
     },
     onAddCartClicked () {
-      this.badge += this.$refs.info.getSkuData().selectedNum
-      this.$toast.success('加入购物车成功')
-      setTimeout(() => {
-        this.show = false
-      }, 1000)
+      const token = localStorage.getItem('token')
+      if (token) {
+        console.log(this.$refs.info.getSkuData())
+        this.badge += this.$refs.info.getSkuData().selectedNum
+        this.$toast.success('加入购物车成功')
+        setTimeout(() => {
+          this.show = false
+        }, 1000)
+      } else {
+        this.$toast('请先登录')
+        setTimeout(() => {
+          this.$router.replace('/profile')
+        }, 1000)
+      }
     }
   }
 }

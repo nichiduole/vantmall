@@ -11,7 +11,7 @@ import * as API from '@/api/detail.js'
 Vue.prototype.$API = API
 Vue.config.productionTip = false
 Vue.filter('price', (val) => {
-  return `￥${val}元`
+  return `￥${val}`
 })
 
 new Vue({

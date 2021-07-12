@@ -17,3 +17,21 @@ export function request (config) {
   })
   return instance(config)
 }
+
+const instanceTest = axios.create({
+  baseURL: '/'
+})
+
+export function requestTest (config) {
+  instanceTest.interceptors.request.use(config => {
+    return config
+  }, err => {
+    return Promise.reject(err)
+  })
+  instanceTest.interceptors.response.use(res => {
+    return res
+  }, err => {
+    return Promise.reject(err)
+  })
+  return instanceTest(config)
+}
