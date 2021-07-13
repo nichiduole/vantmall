@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'Search',
   data () {
     return {
       show: 1,

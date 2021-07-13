@@ -2,12 +2,14 @@
   <div id="app">
     <tab-bar v-if="$route.meta.isShow"></tab-bar>
     <router-view />
+
   </div>
 </template>
 
 <script>
 import TabBar from '@/components/TabBar.vue'
 export default {
+  name: 'App',
   components: {
     TabBar
   },

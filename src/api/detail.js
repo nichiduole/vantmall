@@ -21,3 +21,5 @@ export const testData = (params) => requestTest({
   url: '/api',
   params: params
 })
+export const topicData = () => request('/topic')
+export const categoryData = () => request('/category')

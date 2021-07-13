@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'LearnMore',
   props: {
     message: String,
     isShow: {

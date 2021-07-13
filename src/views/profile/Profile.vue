@@ -87,7 +87,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'Profile',
   data () {
     return {
       avatar: require('@/assets/images/default_avatar.jpg'),
