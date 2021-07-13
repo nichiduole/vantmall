@@ -1,7 +1,8 @@
 <template>
   <div class="product">
     <Swiper :banners="productDescribe.swiper"
-            class="swiper"></Swiper>
+            class="swiper">
+    </Swiper>
     <ProductTop :productDescribe="productDescribe"></ProductTop>
     <div class="border"></div>
     <ProductImage :productDescribe="productDescribe"></ProductImage>
@@ -298,6 +299,7 @@ export default {
 <style lang='less' scoped>
 .swiper {
   width: 100vw;
+  position: relative;
 }
 .border {
   width: 100vw;

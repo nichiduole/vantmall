@@ -1,5 +1,6 @@
 <template>
-  <div class="topic">
+  <div class="topic"
+       @click="$router.push('/product')">
     <Swiper :banners="banners"></Swiper>
     <img :src="recommend"
          style="width:100%">

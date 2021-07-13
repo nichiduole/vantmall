@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="$router.push('/product')">
     <van-search v-model="value"
                 placeholder="请输入搜索关键词"
                 @click="$router.push('/popups')" />
@@ -55,10 +55,12 @@
             <div class="number-title">
               小米mix系列
             </div>
-            <van-grid :column-num="3">
+            <van-grid :column-num="3"
+                      border="false">
               <van-grid-item v-for="item in right.phoneParts"
                              :key="item.id"
                              :icon="item.img"
+                             border="false"
                              :text="item.goodsName" />
             </van-grid>
           </div>
@@ -98,7 +100,7 @@ export default {
   margin-bottom: 50px;
   .left {
     width: 90px;
-    margin-top: 54px;
+    margin-top: 52px;
   }
   .right {
     width: 280px;
