@@ -7,7 +7,7 @@
           <img :src="avatar">
         </van-col>
         <van-col span="10">
-          <span>{{username? username : '点击登录'}}</span>
+          <span>{{isLogin? username : '点击登录'}}</span>
         </van-col>
         <van-col span="8">
           <i>></i>
@@ -91,9 +91,10 @@ export default {
   data () {
     return {
       avatar: require('@/assets/images/default_avatar.jpg'),
-      username: '',
-      password: '',
-      isShow: true
+      username: 'hkn',
+      password: '123456',
+      isShow: true,
+      isLogin: false
     }
   },
   mounted () {
@@ -117,14 +118,14 @@ export default {
       this.$toast('该功能尚未开放')
     },
     quit () {
-      const token = localStorage.getItem('token')
+      const token = localStorage.getItem('vantmallToken')
       if (token) {
         this.$dialog.confirm({
           title: '提示',
           message: '是否退出账号？'
         })
           .then(() => {
-            localStorage.removeItem('token')
+            localStorage.removeItem('vantmallToken')
             localStorage.removeItem('username')
             this.$router.go(0)
             this.$toast('退出成功')
@@ -142,10 +143,11 @@ export default {
           position: 'top'
         })
         this.avatar = require('@/assets/images/avatar.jpg')
-        localStorage.setItem('token', 'woshitoken')
+        localStorage.setItem('vantmallToken', 'iamvantmalltoken')
         localStorage.setItem('username', this.username)
         setTimeout(() => {
           this.isShow = true
+          this.isLogin = true
         }, 1000)
       } else {
         this.$toast('用户名或密码错误，请重试')

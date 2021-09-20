@@ -181,45 +181,41 @@ export default {
 }
 </script>
 <style lang='less' scoped>
-.title {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
 .cart {
   margin: 10px 0 10px 5px;
-}
-.submit {
-  margin-bottom: 50px;
-}
-.top {
-  position: relative;
-}
-.edit {
-  font-size: 14px;
-  position: absolute;
-  top: 5px;
-  right: 20px;
-}
-.delete-button {
-  height: 100%;
-}
-.stepper {
-  position: relative;
-  top: -20px;
-  left: 225px;
-}
-.cart-item {
-  margin-bottom: 20px;
-  padding: 5px;
-  display: flex;
-  .van-card {
-    width: 90vw;
-    padding: 0;
+  .top {
+    position: relative;
+    .title {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .edit {
+      font-size: 14px;
+      position: absolute;
+      top: 5px;
+      right: 20px;
+    }
   }
-}
-
-.delete-button {
-  height: 100%;
+  .cart-item {
+    margin-bottom: 20px;
+    padding: 5px;
+    display: flex;
+    .van-card {
+      width: 90vw;
+      padding: 0;
+    }
+    .stepper {
+      position: relative;
+      top: -20px;
+      left: 225px;
+    }
+    .delete-button {
+      height: 100%;
+    }
+  }
+  .submit {
+    margin-bottom: 50px;
+  }
 }
 </style>

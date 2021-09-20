@@ -16,13 +16,16 @@ const routes = [
     meta: {
       num: 0,
       isShow: true
-    }
+    },
+    children: [
+      {
+        path: '/home/popups',
+        name: 'Popups',
+        component: () => import('@/views/home/popups/Popups.vue')
+      }
+    ]
   },
-  {
-    path: '/popups',
-    name: 'Popups',
-    component: () => import('@/views/home/popups/Popups.vue')
-  },
+
   {
     path: '/product_list',
     name: 'ProductList',
@@ -78,7 +81,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path === '/cart') {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('vantmallToken')) {
       next()
     } else {
       Vue.prototype.$toast('请先登录')

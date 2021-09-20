@@ -260,7 +260,7 @@ export default {
   },
   methods: {
     changeShow () {
-      const token = localStorage.getItem('token')
+      const token = localStorage.getItem('vantmallToken')
       if (token) {
         this.show = true
       } else {
@@ -271,13 +271,13 @@ export default {
       }
     },
     onBuyClicked () {
-      const token = localStorage.getItem('token')
+      const token = localStorage.getItem('vantmallToken')
       if (token) {
         this.$toast('此功能尚未开放')
       }
     },
     onAddCartClicked () {
-      const token = localStorage.getItem('token')
+      const token = localStorage.getItem('vantmallToken')
       if (token) {
         console.log(this.$refs.info.getSkuData())
         this.badge += this.$refs.info.getSkuData().selectedNum

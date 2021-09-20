@@ -13,7 +13,6 @@
                       class="list-cell" />
           </van-list>
         </van-sticky>
-
       </div>
       <div class="right">
         <img :src="right.topImg"
@@ -95,18 +94,6 @@ export default {
 }
 </script>
 <style lang='less' scoped>
-.category-content {
-  display: flex;
-  margin-bottom: 50px;
-  .left {
-    width: 90px;
-    margin-top: 52px;
-  }
-  .right {
-    width: 280px;
-    margin-top: 54px;
-  }
-}
 .van-search {
   background-color: #fff;
   position: fixed;
@@ -115,20 +102,30 @@ export default {
   left: 0;
   right: 0;
 }
-.van-list {
-  width: 90px;
-  font-size: 12px;
+.category-content {
+  display: flex;
+  margin-bottom: 50px;
+  .left {
+    width: 90px;
+    margin-top: 52px;
+    .van-list {
+      width: 90px;
+      font-size: 12px;
+    }
+    .list-cell {
+      height: 50px;
+    }
+  }
+  .right {
+    width: 280px;
+    margin-top: 54px;
+  }
 }
-.list-cell {
-  // background-color: red;
-  height: 50px;
-}
+
 /deep/.van-search {
-  // background-color: red;
   text-align: center;
 }
 .right {
-  // background-color: #f3f3f3;
   margin-right: 10px;
   .top-img {
     width: 100%;

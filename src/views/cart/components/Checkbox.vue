@@ -101,28 +101,24 @@ export default {
 
 </script>
 <style lang='less' scoped>
-.delete-button {
-  height: 100%;
-}
 .cart {
   margin-bottom: 100px;
-}
-.stepper {
-  position: relative;
-  top: -29px;
-  left: 225px;
-}
-/deep/ .cart-item {
-  margin-bottom: 20px;
-  padding: 5px;
-  display: flex;
-  /deep/ .van-card {
-    width: 88vw;
-    padding: 0;
+  .cart-item {
+    margin-bottom: 20px;
+    padding: 5px;
+    display: flex;
+    .van-card {
+      width: 88vw;
+      padding: 0;
+    }
+    .stepper {
+      position: relative;
+      top: -29px;
+      left: 225px;
+      .delete-button {
+        height: 100%;
+      }
+    }
   }
-}
-
-.delete-button {
-  height: 100%;
 }
 </style>
